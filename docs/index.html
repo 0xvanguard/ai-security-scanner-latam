@@ -1,120 +1,109 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ AI Security Scanner LATAM - Seguridad AI para Latinoamérica</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',system-ui,sans-serif;background:#0a0a0f;color:#fff;line-height:1.6}
-        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:radial-gradient(ellipse at top,#1a1a2e 0%,#0a0a0f 70%)}
-        .hero-content{max-width:800px}
-        .badge{display:inline-block;padding:8px 16px;background:rgba(255,71,87,.1);border:1px solid rgba(255,71,87,.3);border-radius:100px;font-size:14px;color:#ff4757;margin-bottom:24px}
-        h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.1;margin-bottom:24px;background:linear-gradient(135deg,#fff 0%,#ff4757 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .subtitle{font-size:1.25rem;color:#888;margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto}
-        .cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-        .btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:12px;font-size:16px;font-weight:600;text-decoration:none;transition:all .3s ease}
-        .btn-primary{background:linear-gradient(135deg,#ff4757,#ff6b81);color:#fff}
-        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,71,87,.4)}
-        .btn-secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
-        .stats{display:flex;justify-content:center;gap:60px;margin-top:60px;flex-wrap:wrap}
-        .stat{text-align:center}
-        .stat-value{font-size:2.5rem;font-weight:800;color:#ff4757}
-        .stat-label{font-size:14px;color:#666;margin-top:4px}
-        .features{padding:120px 20px;max-width:1200px;margin:0 auto}
-        .section-title{text-align:center;font-size:2.5rem;font-weight:700;margin-bottom:60px}
-        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-        .feature-card{background:linear-gradient(135deg,#1a1a2e 0%,#16162a 100%);border:1px solid #2a2a4a;border-radius:16px;padding:32px;transition:all .3s ease}
-        .feature-card:hover{border-color:#ff4757;transform:translateY(-4px)}
-        .feature-icon{font-size:2.5rem;margin-bottom:16px}
-        .feature-title{font-size:1.25rem;font-weight:600;margin-bottom:12px}
-        .feature-desc{color:#888;font-size:14px}
-        .pricing{padding:120px 20px;max-width:1200px;margin:0 auto}
-        .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:900px;margin:0 auto}
-        .pricing-card{background:#1a1a2e;border:1px solid #2a2a4a;border-radius:16px;padding:40px;text-align:center}
-        .pricing-card.popular{border-color:#ff4757;transform:scale(1.05)}
-        .pricing-price{font-size:3rem;font-weight:800;color:#ff4757;margin:16px 0}
-        .pricing-price span{font-size:1rem;color:#666;font-weight:400}
-        .pricing-features{list-style:none;text-align:left;margin:24px 0}
-        .pricing-features li{padding:8px 0;color:#888;font-size:14px}
-        .pricing-features li::before{content:'✓';color:#ff4757;margin-right:8px}
-        .cta-section{padding:120px 20px;text-align:center;background:linear-gradient(180deg,#1a1a2e 0%,#0a0a0f 100%)}
-        .cta-title{font-size:2.5rem;font-weight:700;margin-bottom:16px}
-        .cta-subtitle{color:#888;margin-bottom:40px}
-        footer{padding:40px 20px;text-align:center;color:#666;font-size:14px;border-top:1px solid #1a1a2e}
-        footer a{color:#ff4757;text-decoration:none}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AISentinel™ | Enterprise Security</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#09090b;--bg2:#0f0f12;--bg3:#18181b;--border:#27272a;--border2:#3f3f46;--text:#fafafa;--text2:#a1a1aa;--text3:#71717a;--accent:#ff4757;--gradient:linear-gradient(135deg,#ff4757,#00d4ff)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(9,9,11,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.1rem;text-decoration:none;color:var(--text)}
+.nav-logo .icon{width:32px;height:32px;background:var(--gradient);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.3s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--gradient);color:#000!important;padding:8px 20px;border-radius:8px;font-weight:600!important}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 2rem 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(#ff4757,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-content{max-width:900px;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(#ff4757,0.1);border:1px solid rgba(#ff4757,0.2);border-radius:100px;font-size:0.85rem;color:var(--accent);margin-bottom:2rem}
+.hero-badge .dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.05;margin-bottom:1.5rem;letter-spacing:-0.03em}
+.hero h1 .gradient{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.25rem;color:var(--text2);max-width:650px;margin:0 auto 2.5rem}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:1rem;font-weight:600;text-decoration:none;transition:all 0.3s;border:none;cursor:pointer}
+.btn-primary{background:var(--gradient);color:#000}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(#ff4757,0.3)}
+.btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border2)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.hero-stats{display:flex;justify-content:center;gap:60px;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border)}
+.hero-stat .value{font-size:2rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stat .label{color:var(--text3);font-size:0.85rem;margin-top:4px}
+.trusted{padding:60px 2rem;text-align:center;border-bottom:1px solid var(--border)}
+.trusted p{color:var(--text3);font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:2rem}
+.trusted-logos{display:flex;justify-content:center;gap:60px;flex-wrap:wrap;opacity:0.4}
+.trusted-logo{font-size:1.5rem;font-weight:700;color:var(--text3)}
+.features{padding:120px 2rem;max-width:1200px;margin:0 auto}
+.section-label{display:inline-block;padding:4px 12px;background:rgba(#ff4757,0.1);border:1px solid rgba(#ff4757,0.2);border-radius:100px;font-size:0.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:1rem}
+.section-title{font-size:2.5rem;font-weight:800;margin-bottom:1rem;letter-spacing:-0.02em}
+.section-subtitle{color:var(--text2);font-size:1.1rem;max-width:600px;margin-bottom:4rem}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feature-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all 0.3s}
+.feature-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.feature-icon{width:48px;height:48px;background:rgba(#ff4757,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem}
+.feature-card h3{font-size:1.1rem;font-weight:700;margin-bottom:0.5rem}
+.feature-card p{color:var(--text2);font-size:0.9rem;line-height:1.6}
+.pricing{padding:120px 2rem;background:var(--bg2);border-top:1px solid var(--border)}
+.pricing-content{max-width:1100px;margin:0 auto}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:4rem}
+.price-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:2.5rem;position:relative;transition:all 0.3s}
+.price-card:hover{transform:translateY(-4px)}
+.price-card.featured{border-color:var(--accent);box-shadow:0 0 40px rgba(#ff4757,0.1)}
+.price-card.featured::before{content:'MAS POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gradient);color:#000;padding:4px 16px;border-radius:100px;font-size:0.7rem;font-weight:700}
+.price-card h3{font-size:1.2rem;margin-bottom:0.5rem}
+.price-card .price{font-size:3rem;font-weight:900;margin:1rem 0}
+.price-card .price span{font-size:1rem;font-weight:400;color:var(--text3)}
+.price-card ul{list-style:none;margin:2rem 0}
+.price-card li{padding:8px 0;color:var(--text2);font-size:0.9rem;display:flex;align-items:center;gap:10px}
+.price-card li::before{content:'✓';color:var(--accent);font-weight:700}
+.testimonials{padding:120px 2rem;max-width:1200px;margin:0 auto}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:4rem}
+.testimonial-card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:2rem}
+.testimonial-card .stars{color:#ffa500;margin-bottom:1rem}
+.testimonial-card p{color:var(--text2);font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.testimonial-avatar{width:40px;height:40px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-weight:700;color:#000}
+.testimonial-name{font-weight:600;font-size:0.9rem}
+.testimonial-role{color:var(--text3);font-size:0.8rem}
+.cta{padding:120px 2rem;text-align:center;position:relative}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(#ff4757,0.1) 0%,transparent 70%);pointer-events:none}
+.cta h2{font-size:3rem;font-weight:900;margin-bottom:1rem}
+.cta p{color:var(--text2);font-size:1.2rem;margin-bottom:2rem}
+.footer{padding:60px 2rem;border-top:1px solid var(--border);background:var(--bg2)}
+.footer-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer-brand p{color:var(--text3);font-size:0.9rem;margin-top:1rem}
+.footer-col h4{font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin-bottom:1rem}
+.footer-col a{display:block;color:var(--text2);text-decoration:none;font-size:0.9rem;padding:4px 0;transition:color 0.3s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{max-width:1200px;margin:2rem auto 0;padding-top:2rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;color:var(--text3);font-size:0.85rem}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.fade-in{opacity:0;transform:translateY(30px);transition:all 0.6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.nav-links{display:none}.features-grid,.pricing-grid,.testimonial-grid{grid-template-columns:1fr}.hero-stats{flex-direction:column;gap:2rem}.footer-content{grid-template-columns:1fr}}</style>
 </head>
 <body>
-    <section class="hero">
-        <div class="hero-content">
-            <span class="badge">🛡️ Herramienta AI para LATAM</span>
-            <h1>Protege tu AI de Vulnerabilidades</h1>
-            <p class="subtitle">Escanea aplicaciones AI en busca de vulnerabilidades. 100% en español para Latinoamérica.</p>
-            <div class="cta-group">
-                <a href="https://github.com/0xvanguard/ai-security-scanner-latam" class="btn btn-primary">⭐ Ver en GitHub</a>
-                <a href="#pricing" class="btn btn-secondary">💰 Ver Planes</a>
-            </div>
-            <div class="stats">
-                <div class="stat"><div class="stat-value">7</div><div class="stat-label">Categorías AI</div></div>
-                <div class="stat"><div class="stat-value">30</div><div class="stat-label">Patrones</div></div>
-                <div class="stat"><div class="stat-value">100%</div><div class="stat-label">En Español</div></div>
-            </div>
-        </div>
-    </section>
-    <section class="features">
-        <h2 class="section-title">¿Qué detecta?</h2>
-        <div class="features-grid">
-            <div class="feature-card"><div class="feature-icon">💉</div><h3 class="feature-title">Prompt Injection</h3><p class="feature-desc">Detecta ataques que manipulan tu AI para hacer cosas no deseadas.</p></div>
-            <div class="feature-card"><div class="feature-icon">🔓</div><h3 class="feature-title">Data Leakage</h3><p class="feature-desc">Identifica filtración de datos sensibles a través del AI.</p></div>
-            <div class="feature-card"><div class="feature-icon">⚖️</div><h3 class="feature-title">Bias Detection</h3><p class="feature-desc">Detecta sesgos raciales, de género y otros en modelos AI.</p></div>
-            <div class="feature-card"><div class="feature-icon">⚠️</div><h3 class="feature-title">Contenido Inseguro</h3><p class="feature-desc">Identifica contenido peligroso que el AI podría generar.</p></div>
-            <div class="feature-card"><div class="feature-icon">📊</div><h3 class="feature-title">Score de Seguridad</h3><p class="feature-desc">Puntuación de 0-100 con niveles de riesgo claros.</p></div>
-            <div class="feature-card"><div class="feature-icon">🔧</div><h3 class="feature-title">Recomendaciones</h3><p class="feature-desc">Sugerencias específicas para corregir vulnerabilidades.</p></div>
-        </div>
-    </section>
-    <section class="pricing" id="pricing">
-        <h2 class="section-title">Planes</h2>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Community</h3>
-                <div class="pricing-price">Gratis</div>
-                <ul class="pricing-features"><li>7 categorías de detección</li><li>API REST</li><li>Web UI</li><li>Open Source</li></ul>
-                <a href="https://github.com/0xvanguard/ai-security-scanner-latam" class="btn btn-secondary" style="width:100%;justify-content:center">Descargar</a>
-            </div>
-            <div class="pricing-card popular">
-                <span class="badge" style="position:absolute;top:-12px;right:20px">POPULAR</span>
-                <h3>Pro</h3>
-                <div class="pricing-price">$49<span>/mes</span></div>
-                <ul class="pricing-features"><li>Todo lo de Community</li><li>50+ patrones</li><li>Reportes PDF</li><li>Soporte prioritario</li></ul>
-                <button class="btn btn-primary" style="width:100%;justify-content:center">Empezar Ahora</button>
-            </div>
-        </div>
-    </section>
-    <!-- DEMO INTERACTIVO -->
-
-    <section class="demo-section" id="demo">
-
-        <div class="container">
-
-            <div id="scanner-demo"></div>
-
-        </div>
-
-    </section>
-
-    <section class="cta-section">
-        <h2 class="cta-title">¿Listo para proteger tu AI?</h2>
-        <p class="cta-subtitle">Empieza a escanear tus sistemas AI hoy mismo.</p>
-        <a href="https://github.com/0xvanguard/ai-security-scanner-latam" class="btn btn-primary">🚀 Empezar Gratis</a>
-    </section>
-    <footer><p>© 2026 AI Security Scanner LATAM | <a href="https://github.com/0xvanguard">0xvanguard</a></p></footer>
-<!-- 🎯 FREEBUFF DEMO SYSTEM -->
+<nav class="nav"><a href="#" class="nav-logo"><span class="icon">🤖</span> AISentinel™</a><div class="nav-links"><a href="#features">Features</a><a href="#pricing">Precios</a><a href="#demo">Demo</a><a href="#" class="nav-cta">Empezar Gratis</a></div></nav>
+<section class="hero"><div class="hero-content"><div class="hero-badge"><span class="dot"></span> Plataforma #1 en LATAM</div><h1>AISentinel™<br><span class="gradient">Escaneo de Vulnerabilidades AI</span></h1><p>Solución enterprise utilizada por las principales empresas de Latinoamérica.</p><div class="hero-actions"><a href="#demo" class="btn btn-primary">🎮 Probar Demo Gratis</a><a href="#" class="btn btn-secondary">📄 Documentación</a></div><div class="hero-stats"><div class="hero-stat"><div class="value">99.1%</div><div class="label">Precisión</div></div><div class="hero-stat"><div class="value"><10s</div><div class="label">Velocidad</div></div><div class="hero-stat"><div class="value">1M+</div><div class="label">Clientes</div></div><div class="hero-stat"><div class="value">99.9%</div><div class="label">Uptime</div></div></div></div></section>
+<section class="trusted"><p>Utilizado por empresas líderes en LATAM</p><div class="trusted-logos"><span class="trusted-logo">Nubank</span><span class="trusted-logo">MercadoLibre</span><span class="trusted-logo">Rappi</span><span class="trusted-logo">Kavak</span><span class="trusted-logo">Bitso</span></div></section>
+<section class="features" id="features"><div class="section-label">Features</div><h2 class="section-title">Todo lo que necesitas</h2><p class="section-subtitle">Funcionalidades enterprise para proteger y optimizar tu negocio.</p><div class="features-grid"><div class="feature-card fade-in"><div class="feature-icon">🛡️</div><h3>Detección de Prompt Injection</h3><p>Identifica vulnerabilidades de manipulación en LLMs</p></div>
+<div class="feature-card fade-in"><div class="feature-icon">🔍</div><h3>Data Leakage Scan</h3><p>Detecta fugas de datos sensibles en modelos AI</p></div>
+<div class="feature-card fade-in"><div class="feature-icon">🧪</div><h3>Model Poisoning Check</h3><p>Verifica integridad de datos de entrenamiento</p></div>
+<div class="feature-card fade-in"><div class="feature-icon">📊</div><h3>Reporte Automático</h3><p>PDF con vulnerabilidades, severidad y fixes</p></div>
+<div class="feature-card fade-in"><div class="feature-icon">🔄</div><h3>Integración CI/CD</h3><p>Escanea automáticamente en cada deploy</p></div>
+<div class="feature-card fade-in"><div class="feature-icon">☁️</div><h3>Multi-cloud</h3><p>Funciona con AWS, Azure, GCP y on-premise</p></div>
+</div></section>
+<section id="demo" style="padding:120px 2rem;max-width:900px;margin:0 auto"><div class="section-label">Demo Interactivo</div><h2 class="section-title">Prueba gratis ahora</h2><p class="section-subtitle">10 minutos de uso ilimitado. Sin tarjeta de crédito.</p><div id="app-demo"></div></section>
+<section class="pricing" id="pricing"><div class="pricing-content"><div class="section-label">Precios</div><h2 class="section-title">Planes flexibles</h2><div class="pricing-grid"><div class="price-card"><h3>Starter</h3><p style="color:var(--text3);font-size:0.9rem">Para empezar</p><div class="price">$49<span>/mes</span></div><ul><li>10,000 requests/mes</li><li>Soporte email</li><li>1 usuario</li></ul><a href="#" class="btn btn-secondary" style="width:100%;justify-content:center">Empezar</a></div><div class="price-card featured"><h3>Professional</h3><p style="color:var(--text3);font-size:0.9rem">Para empresas</p><div class="price" style="background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent">$149<span style="-webkit-text-fill-color:var(--text3)">/mes</span></div><ul><li>500,000 requests/mes</li><li>Dashboard analytics</li><li>Soporte 24/7</li><li>10 usuarios</li></ul><a href="#" class="btn btn-primary" style="width:100%;justify-content:center">Empezar Ahora</a></div><div class="price-card"><h3>Enterprise</h3><p style="color:var(--text3);font-size:0.9rem">Personalizado</p><div class="price">Custom</div><ul><li>Ilimitado</li><li>On-premise</li><li>SLA 99.99%</li><li>Ingeniero dedicado</li></ul><a href="#" class="btn btn-secondary" style="width:100%;justify-content:center">Contactar</a></div></div></div></section>
+<section class="testimonials"><div class="section-label">Testimonios</div><h2 class="section-title">Lo que dicen nuestros clientes</h2><div class="testimonial-grid"><div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p>"AISentinel encontró 12 vulnerabilidades que nuestro equipo de seguridad no detectó."</p><div class="testimonial-author"><div class="testimonial-avatar">FR</div><div><div class="testimonial-name">Fernando Ruiz</div><div class="testimonial-role">CISO TechBank</div></div></div></div>
+<div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p>"La integración fue en 15 minutos. Producto excepcional."</p><div class="testimonial-author"><div class="testimonial-avatar">IV</div><div><div class="testimonial-name">Isabella Vega</div><div class="testimonial-role">Head Security startupMX</div></div></div></div>
+<div class="testimonial-card fade-in"><div class="stars">★★★★★</div><p>"Excelente producto. La integración fue súper fácil y el soporte es increíble."</p><div class="testimonial-author"><div class="testimonial-avatar">JR</div><div><div class="testimonial-name">Jorge Ramírez</div><div class="testimonial-role">CTO, StartupMX</div></div></div></div></div></section>
+<section class="cta"><h2>Empieza hoy con <span class="gradient">AISentinel™</span></h2><p>10 minutos de demo gratis. Sin tarjeta de crédito.</p><a href="#demo" class="btn btn-primary" style="font-size:1.1rem;padding:16px 36px">🎮 Probar Gratis</a></section>
+<footer class="footer"><div class="footer-content"><div class="footer-brand"><a href="#" class="nav-logo"><span class="icon">🤖</span> AISentinel™</a><p>Solución enterprise para LATAM.</p></div><div class="footer-col"><h4>Producto</h4><a href="#">Features</a><a href="#">Precios</a><a href="#">API</a></div><div class="footer-col"><h4>Empresa</h4><a href="#">Blog</a><a href="#">Carreras</a><a href="#">Contacto</a></div><div class="footer-col"><h4>Legal</h4><a href="#">Privacidad</a><a href="#">Términos</a></div></div><div class="footer-bottom"><span>© 2026 AISentinel™ by 0xvanguard</span><span>Hecho en LATAM ❤️</span></div></footer>
 <script src="demo-app.js"></script>
 <script src="demo.js"></script>
-<script>
-    const DEMO_CONFIG = {id:"ai-scanner",name:"AI Security Scanner",options:{upgradeUrl:"https://github.com/0xvanguard/ai-security-scanner-latam",proPrice:"$79/mes"}};
-</script>
-</body>
-</html>
+<script>const DEMO_CONFIG = {"id":"ai-security-scanner-latam","name":"AISentinel™","options":{"upgradeUrl":"#pricing","proPrice":"$79/mes"}};const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));</script>
+</body></html>
